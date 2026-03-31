@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Calculator</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<!-- Start Screen -->
+<div id="startScreen">
+    <h1>⚡ Welcome to Ultimate Calculator</h1>
+    <button onclick="startApp()">Start</button>
+</div>
+
+<!-- Main App -->
+<div id="container" style="display:none;">
+    <h2>Ultimate Calculator</h2>
+    <div class="btn-group">
+        <button onclick="setMode('math')">Math</button>
+        <button onclick="setMode('physics')">Physics</button>
+        <button onclick="setMode('shapes')">3D Shapes</button>
+        <button onclick="setMode('atoms')">Atoms</button>
+        <button onclick="setMode('puzzle')">Puzzle</button>
+    </div>
+
+    <div id="buttonsContainer"></div>
+    <div id="inputsContainer"></div>
+    <input type="text" id="calcInput" placeholder="Enter general calculation">
+    <div id="threeContainer"></div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+    <p id="steps"></p>
+    <p id="madeBy">
+        Made by Ali Saif Ali Mustafa Ahmed Shaheed Amir Ghaith Shawqi, with the assistance of Mustafa Ahmed Khurshid, First Grade A
+    </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
