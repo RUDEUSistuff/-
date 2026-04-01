@@ -42,15 +42,6 @@ function setMode(m){
         });
     }
 
-    else if(m==='atoms'){
-        ['Solid','Liquid','Gas','Plasma'].forEach(b=>{
-            let btn=document.createElement('button');
-            btn.innerText=b;
-            btn.onclick=()=>simulateAtoms(b);
-            buttonsContainer.appendChild(btn);
-        });
-    }
-
     else if(m==='puzzle'){
         ['Puzzle'].forEach(b=>{
             let btn=document.createElement('button');
@@ -151,30 +142,7 @@ function drawShape(type){
         renderer.render(scene,camera);
     }
     animate();
-}
 
-function simulateAtoms(type){
-    threeContainer.innerHTML='';
-    let canvas=document.createElement('canvas');
-    canvas.width=300;
-    canvas.height=200;
-    threeContainer.appendChild(canvas);
-    let ctx=canvas.getContext('2d');
-    let atoms=[];
-    for(let i=0;i<30;i++){
-        atoms.push({x:Math.random()*300,y:Math.random()*200,vx:Math.random()*2,vy:Math.random()*2});
-    }
-    function animate(){
-        ctx.clearRect(0,0,300,200);
-        atoms.forEach(a=>{
-            if(type==='Solid'){a.vx=0.2;a.vy=0.2;}
-            if(type==='Liquid'){a.vx=Math.random()*2;a.vy=Math.random()*2;}
-            if(type==='Gas'){a.vx=Math.random()*4;a.vy=Math.random()*4;}
-            if(type==='Plasma'){a.vx=Math.random()*6;a.vy=Math.random()*6;}
-            a.x+=a.vx;a.y+=a.vy;
-            ctx.fillRect(a.x,a.y,3,3);
-        });
-        requestAnimationFrame(animate);
     }
     animate();
 }
